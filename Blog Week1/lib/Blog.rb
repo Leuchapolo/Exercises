@@ -43,20 +43,30 @@ class Blog
 				puts "-----------"
 			end
 
-			puts "Enter 'next', 'prev', or 'exit': "
+			
 			
 			prompt_done = false
 			while prompt_done == false
+				puts "Enter 'next', 'prev', or 'exit': "
 				response = gets.chomp
 				if response == "exit"
 					finished = true
 					prompt_done = true
 				elsif response == "next"
-					page_cursor += 1 
-					prompt_done = true
+					if page_cursor < pages.length
+						page_cursor += 1 
+						prompt_done = true
+					else 
+						puts "You're already on the last page!"
+					end
+
 				elsif response == "prev"
-					page_cursor -= 1
-					prompt_done = true
+					if page_cursor > 0
+						page_cursor += 1 
+						prompt_done = true
+					else 
+						puts "You're already on the first page!"
+					end
 				else
 					puts "incorrect prompt"
 				end
