@@ -15,7 +15,7 @@ class Payroll
 
   		puts emp.name + " is recieving " + (emp.calculate_salary * 0.82).to_s
   		@total_pay += emp.calculate_salary * 0.82
-  		notify_employee(emp)
+  		#notify_employee(emp)
 
   	end
   end
