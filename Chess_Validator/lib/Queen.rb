@@ -1,12 +1,23 @@
 class Queen 
+	attr_accessor :type
 	def initialize(x, y, color)
 		@x = x
 		@y = y
 		@color = color
+
+		if color == "Black"
+			@type = "bQ"
+		elsif color == "White"
+			@type = "wQ"
+		end
 	end
 
 	def move?(x , y)
-		if  x == @x || y == @y || (x - @x).abs/(y - @y).abs == 1 
+		val_move(@x, @y, x, y)
+	end
+
+	def val_move(x1, y1, x2, y2)
+		if  x2 == x1 || y2 == y1 || (x2 - x1).abs/(y2 - y1).abs == 1 
 			true
 		else 
 			false
