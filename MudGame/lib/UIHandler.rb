@@ -23,20 +23,22 @@ class UIHandler
 
 	def handle_decision(decision)
 		if decision == "N" || decision == "S" || decision == "E" || decision == "W"
-			if @game.world[@game.player.location].directions[decision] != nil && @game.world[@game.player.location].directions[decision] == "Exit"
-				puts "Ok yeah that's fine then just walk out on your problems. @Game over."
-				@done = true 
-				@incorrect = false
-			elsif @game.world[@game.player.location].directions[decision] != nil && @game.world[@game.world[@game.player.location].directions[decision]].locked == false
-				@game.move(decision)
-				@incorrect = false
-			
-			elsif @game.world[@game.player.location].directions[decision] != nil && @game.player.inventory.include?("key")
-				puts "\nUsing key to open door..."
-				@game.move(decision)
-				@incorrect = false
-			elsif @game.world[@game.player.location].directions[decision] != nil && @game.player.inventory.include?("key") == false
-				puts "This door is locked buddy."
+			if @game.world[@game.player.location].directions[decision] != nil
+				if @game.world[@game.player.location].directions[decision] == "Exit"
+					puts "Ok yeah that's fine then just walk out on your problems. @Game over."
+					@done = true 
+					@incorrect = false
+				elsif @game.world[@game.world[@game.player.location].directions[decision]].locked == false
+					@game.move(decision)
+					@incorrect = false
+				
+				elsif @game.player.inventory.include?("key")
+					puts "\nUsing key to open door..."
+					@game.move(decision)
+					@incorrect = false
+				elsif @game.player.inventory.include?("key") == false
+					puts "This door is locked buddy."
+				end
 			end
 		elsif decision[0, 7] == "pick up"
 			@game.pick_up(decision[8, decision.length-1])

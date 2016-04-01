@@ -40,7 +40,7 @@ class Game
 				puts "As soon as you use the lucky penny it vanishes into thin air leaving only a diamond with the same radius in it's place"
 				@player.inventory.delete(object)
 				@player.inventory.push("Diamond")
-			elsif object == "Diamond"
+			elsif object == "diamond"
 				puts "Don't 'use' it! Sell it!"
 			elsif object == "beer"
 				puts "You take a sip of the beer and immediately regret it due to last night's shenanigans"

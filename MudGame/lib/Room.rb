@@ -5,6 +5,9 @@ class Room
 		@directions = directions
 		@contents = contents
 		@description = description
+		lock_utility_closet
+	end
+	def lock_utility_closet
 		if name == "Utility Closet"
 			@locked = true
 		else 
