@@ -35,6 +35,12 @@ require_relative "lib/Player.rb"
 # boart.print_board
 # player.play_chess("lib/simple_moves.txt")
 
+boart = Board.new("lib/complex_board.txt")
+player = Player.new(boart)
+boart.print_board
+player.play_chess("lib/complex_moves.txt")
+
+
 
 
 
