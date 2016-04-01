@@ -5,7 +5,7 @@ require_relative "lib/Knight.rb"
 require_relative "lib/Queen.rb"
 require_relative "lib/Pawn.rb"
 require_relative "lib/Board.rb"
-
+require_relative "lib/Player.rb"
 
 
 # wr_left = Rook.new(1, 1, "White")
@@ -29,5 +29,15 @@ require_relative "lib/Board.rb"
 # puts "Black Pawn move " + bp_1.move?(1, 6).to_s
 # puts "Bad Black Pawn move " + bp_1.move?(1, 7).to_s
 
-boart = Board.new("lib/simple_board.txt")
-boart.print_board
+
+# boart = Board.new("lib/simple_board.txt")
+# player = Player.new(boart)
+# boart.print_board
+# player.play_chess("lib/simple_moves.txt")
+
+
+
+
+
+
+
