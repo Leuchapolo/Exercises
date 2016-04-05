@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title> Home Page </title>
+	</head>
+	<body>
+		<h1> Kanye's Workout Plan </h1>
+		<p> <%= @greeting %> </p>
+		<p>Hear reviews from:
+		<a href = "/about"> Ella-May</a> 
+		<% if Date.today.tuesday? %>
+			<p>
+				Mondays <strong> SUCK</strong>. Luckily, <%= Date.today.strftime("Today is %A, %B %e, %Y") %>.
+			</p>
+		<% end %>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title> Home | Calculator </title>
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<form action="/calculate" method="POST">
+			<% if @prev != nil %>
+				<input type="number" name="first_number" value = "<%= @prev %>" >
+			<%else %>
+				<input type="number" name="first_number" placeholder="1st number" >
+			<% end %>
+  			<input type="number" name="second_number" placeholder="2nd number">
+
+			<button type="submit" name = "operation" value = "Add">Add</button>
+			<button type="submit" name = "operation" value = "Subtract">Subtract</button>
+			<button type="submit" name = "operation" value = "Multiply">Multiply</button>
+			<button type="submit" name = "operation" value = "Divide">Divide</button>
+
+		</form>
+		<% if @result != nil %>
+			<p> <%= @result %> </p>
+			<form action = "/" method= "POST">
+				<button type="submit" name = "reuse" value = "<%= @result %>">Reuse Result</button>
+			</form>
+		<%end %>
+
+	</body>
+</html>
