@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do List</title>
+</head>
+<body>
+	<h1>
+	<%= @name %>'s To Do List
+	</h1>
+		<form action = "/complete_change" method = "POST">
+		<ol>
+			<% @todo_list.each_with_index do |task, ind| %>	
+				<li>
+					<%= task.content %>
+					<% if task.complete? %>
+						<button type="submit" name = "item" value = "<%= ind %>">Re-Add</button> 
+						
+						<button type="submit" name = "delete" value = "<%= ind %>">Delete</button>
+					<% else %>
+						<button type="checkbox" name = "item" value = "<%= ind %>"></button> 
+					<% end %>
+				</li>
+			<% end %>
+		</ol>
+		</form>
+	<% if @show_add == false %>
+		<form action = "/add_todo" method = "POST">
+			<button type="submit">Add Todo</button>
+		</form>
+	<% else %>
+		<form action = "/" method = "POST">
+			<input type = "text" name = "new_todo" placeholder= "Write Task Content Here" size = "50">
+			<br>
+			<button type="submit"> Add & Save</button>
+		</form>
+	<% end %>
+</body>
+</html>
