@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NiTwitter</title>
+</head>
+<body>
+	<h1> NiTwitter</h1>
+	<ul>
+		<% @blog.latest_posts.each_with_index do |post, ind| %>
+			<li>
+				<a href = "/post_deats/<%= ind %>"><%= post.title %></a>
+			</li>
+		<% end %>
+	</ul>
+	<p> New Post: </p>
+	<form action = "/new_post" method = "POST">
+		<input type = "text" name = "title" placeholder="Enter post title" size = "50">
+		<input type = "text" name = "author" placeholder="Enter author name" size = "50">
+		<input type = "text" name = "category" placeholder="Enter category" size = "50">
+		<input type = "text" name = "text" placeholder="Enter post" size = "160">
+		<button type = "submit"> Add Post </button>
+	</form>
+
+</body>
+</html>

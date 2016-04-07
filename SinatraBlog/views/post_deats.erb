@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post Details</title>
+</head>
+<body>
+	<h1> <%= @post.title %> </h1>
+	<br>
+	<br>
+	<p><em><%= @post.text %></em></p>
+	<br>
+	<br>
+	<p> Category: <%= @post.category %></p>
+	<p> Author: <%= @post.author %></p>
+	<p> Date: <%= @post.date.strftime("%b, %e, %Y") %></p>
+	<a href = "/"> Go Home </a>
+</body>
+</html>
