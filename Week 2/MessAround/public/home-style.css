@@ -1,0 +1,22 @@
+.circle
+{
+	background-color: #09B8C1;
+	height : 50px;
+	width: 50px;
+	border-radius: 100%;
+	animation-name: fly;
+	animation-duration: 4s;
+	animation-iteration-count: 5;
+
+}
+
+@keyframes fly {
+	0%, 100% {
+		transform: rotate(0) translateX(0px);
+	}
+
+	50% {
+		transform: rotate(0) translateX(150px);
+	}
+
+}

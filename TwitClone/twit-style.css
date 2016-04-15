@@ -1,0 +1,72 @@
+.row {
+	/*border : dotted 2px red;*/
+}
+
+.taco {
+	border-top-width: 0;
+	border-right-width: 0;
+	border-left-width: 0;
+	border-bottom-width: 2px;
+	height: 50px;
+	border-style: solid;
+	padding: 15px;
+	border-color: #AAA;
+	text-align: center;
+}
+
+.menuItems {
+	color : #AAA;
+}
+
+.menuItem {
+	padding: 15px;
+}
+
+.twitterSign{
+	color: #4BF;
+}
+
+.search {
+	padding : 10px;
+}
+
+.BannerPic {
+	height : 300px;
+	width: 100%;
+}
+
+.metaHolder {
+	display: inline-block;
+	padding: 5px 20px;
+	text-align: center;
+}
+
+.metaTweet {
+	text-align: center;
+}
+
+.metaRow{
+	height : 50px;
+	border: solid #AAA;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+}
+
+.follow{
+	text-align: left;
+	position: relative;
+	left: 40px;
+}
+
+.avoutline{
+	width : 152px;
+	margin-bottom: -150px;
+	position: relative;
+	bottom: 105px;
+	left: 20px;
+	padding : 5px;
+	background-color: #FFF;
+	float: left;
+}
