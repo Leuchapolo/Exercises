@@ -1,0 +1,18 @@
+<%= @user_text %>
+<br>
+Text is <%= @count %> words long.
+<br>
+Estimated time to read is <%= @time  %> minutes.
+<br>
+<br>
+Here are the words used most in the text:
+
+<ol>
+	<% @top_ten.each do |word| %>
+		<li><%= word.name %> : <%= word.count %></li>
+	<% end %>
+</ol>
+
+<br>
+<%= link_to("Home", home_path) %>
+
