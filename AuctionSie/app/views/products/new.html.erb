@@ -1,0 +1,10 @@
+<%= form_for @product do |f| %>
+	<%= f.label :title%>
+	<%= f.text_field :title%>
+	<%= f.label :description%>
+	<%= f.text_area :description%>
+	<%= f.label :deadline%>
+	<%= select_date Date.today, prefix: :start_date %>
+	<%= f.button %>
+
+<% end %>

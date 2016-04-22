@@ -1,0 +1,8 @@
+	
+<ul>
+	<% @products.each do |product| %>
+		<li> <%= product.title %> : <%= product.description %></li><a href = "/products/<%=product.id %>"> Show Product </a>
+	<% end %>
+</ul>
+
+<a href = "products/new"> Add new product </a>

@@ -1,0 +1,32 @@
+<% if @bid.errors.any? %> 
+	Errors <ul>
+	<% @bid.errors.full_messages.each do |error| %>
+		<li> <%= error%> </li>
+	<% end %>
+	</ul>
+<% end %>
+<h1><%= @product.title %></h1>
+<ul>
+	<li>Description : <%=@product.description %> </li>
+	<li>Deadline : <%=@product.deadline %> </li>
+	<li> Bids : <ul>
+		<% @product.bids.all.each do |bid| %>
+			<li> <%=User.find(bid.user_id).name %> : <%= bid.amount%></li>
+		<% end %>
+		</ul>
+		<% if Time.now < @product.deadline %>
+			<%= form_for [@product, @bid] do |f|%>
+				<%= label_tag(:email, "Email: ") %> 
+				<%= text_field_tag(:email)  %>
+
+				<%= f.label :amount %>
+				<%= f.text_field :amount %>
+
+				<%= f.submit "Bid" %>
+			<% end %>
+		<% else %>
+			<%= User.find(@product.bids.order(amount: "DESC" ).first.user_id).name %> was the winner. Seems familiar huh? The feeling of losing. Congrats. You can't even win an auction. 
+		<% end %>
+	</li>
+</ul>
+	
