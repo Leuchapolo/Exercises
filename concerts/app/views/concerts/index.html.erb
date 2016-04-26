@@ -1,0 +1,14 @@
+Today's Concerts
+<ul class = "months_concerts">
+	This Month's Concerts
+	<% @months_concerts.each do |concert| %>
+		<li> <%= concert.artist %> : $<%= concert.price %> in <%= concert.city %> </li>
+	<% end %>
+</ul>
+
+<ul class = "todays_concerts">
+	<% @todays_concerts.each do |concert| %>
+		<li> <%= concert.artist %> : $<%= concert.price %> in <%= concert.city %></li>
+	<% end %>
+</ul>
+<a href = "/concerts/new"> Add New Concert </a>

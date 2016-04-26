@@ -1,0 +1,12 @@
+<h1> <%= @my_project.name %> </h1>
+<ul>
+<% @my_entries.each do |entry| %>
+	<li>
+	<%= entry.hours %> h
+	<%= entry.minutes %> m -
+	<%= entry.date %>
+	<a href = "time_entries/<%= entry.id %>/edit"> Edit </a><a href = "time_entries/<%= entry.id %>" data-method = "delete" data-confirm="Are you sure?"> Delete </a>
+	</li>
+<%end %>
+</ul>
+

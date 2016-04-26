@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
 	get '/', to: 'site#home'
 
-  get '/projects', to: 'projects#index'
+  resources :projects, only: [:index, :show, :new, :create] do
+    resources :time_entries, except: [:show]
+  end
 
-  get '/projects/show/:id', to: 'projects#show'
-  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

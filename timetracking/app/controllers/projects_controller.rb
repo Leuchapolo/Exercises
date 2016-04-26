@@ -14,4 +14,14 @@ class ProjectsController < ApplicationController
 		end
 		
 	end
+
+	def new 
+		@project = Project.new
+		render 'new'
+	end
+
+	def create
+		new_project = Project.create(name: params[:project][:name], description: params[:project][:description])
+		redirect_to("/projects")
+	end
 end

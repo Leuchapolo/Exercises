@@ -2,7 +2,7 @@
 	<% @projects.each do |project| %>
 		<li><%=project.name%>: 
 		<% if project.description != nil %>
-			<%= project.description%> <a href = "/projects/show/<%=project.id%>">Show Info</a>
+			<%= project.description%> <a href = "/projects/<%=project.id%>">Show Info</a>
 		<% else %>
 			Item has no description
 		<% end %>
@@ -10,3 +10,5 @@
 	<% end %>
 
 </ul>
+
+<a href = "/projects/new" > New Post </a>

@@ -1,3 +1,5 @@
 <%= @project.name + " : " + @project.description%>
 <a href = "/projects"> Home </a>
-
+<br>
+<a href = "/projects/<%= @project.id %>/time_entries"> Show Time Entries</a>
+<a href = "/projects/<%= @project.id %>/time_entries/new"> Make new time entry </a>
